@@ -28,7 +28,6 @@ main() {
       if(st == 1) {
         ++wc[num];
         st = 0;
-        if(wc[num] > max) max = wc[num];
         num = 0;
       }
     }
@@ -38,10 +37,13 @@ main() {
     }
     else ++num;
   }
+
   printf("输出长度--->统计：\n");
   for(i = 0; i < 100; i++) {
+    if(wc[i] > max) max = wc[i];
     if(wc[i] > 0) printf("%d ---> %d\n", i, wc[i]);
   }
+  
   printf("输出直方图：\n");  //　换行输出结果
   for(i = max; i > 0; i--) {
     printf(" %d", i);
